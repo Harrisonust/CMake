@@ -11,6 +11,7 @@
 * `contrib/` this used to mean “user-contributed snippets” or source code given to the primary author or authors for use or to extend an open-source project [3](or even a closed source one), though the “contrib” idea hit its popularity peak a long time ago, in a time when not everyone had a source versioning control utility like git
 <br />
 reference: https://www.linkedin.com/pulse/what-general-c-project-structure-like-herbert-elwood-gilliland-iii
+
 ## Commom cmake functions
 * `add_executable([target] [src_files])`<br />
 Compile `srs_files` into a executable `target`
