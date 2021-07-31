@@ -16,3 +16,7 @@ target_include_directories(myprogram PUBLIC include)
 add_library(HandyMathLib STATIC lib/HandyMath/handy_math.cpp)
 target_include_directories(HandyMathLib PUBLIC lib/HandyMath/include)
 target_link_libraries(myprogram PUBLIC HandyMathLib)
+
+#include self-defined library with .cpp and .h files version 2(recursive cmakelists)
+add_subdirectory(lib/Geometrics)
+target_link_libraries(myprogram PUBLIC GeometicsLib)

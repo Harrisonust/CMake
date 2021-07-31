@@ -2,8 +2,8 @@
 
 #include "Const.h"
 #include "Const2.h"
+#include "circle.h"
 #include "handy_math.h"
-
 using namespace std;
 
 int main() {
@@ -16,6 +16,10 @@ int main() {
     // use self-defined libriary with .cpp and .h files (version 1)
     cout << "math_add(int, int): " << math_add(1, 2) << endl;
     cout << "math_add(float, float): " << math_add(1.2, 1.1) << endl;
+
+    Circle circle(10.0);
+    cout << circle << endl;
+    cout << "area: " << circle.getArea() << endl;
 
     return 0;
 }
