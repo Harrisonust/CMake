@@ -17,6 +17,8 @@ int main() {
     cout << "math_add(int, int): " << math_add(1, 2) << endl;
     cout << "math_add(float, float): " << math_add(1.2, 1.1) << endl;
 
+    // use self-defined library with .cpp and .h files (version 2: recursive
+    // cmakelists)
     Circle circle(10.0);
     cout << circle << endl;
     cout << "area: " << circle.getArea() << endl;
