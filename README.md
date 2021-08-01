@@ -13,6 +13,18 @@
 reference: https://www.linkedin.com/pulse/what-general-c-project-structure-like-herbert-elwood-gilliland-iii
 
 ## Commom cmake functions
+### Setting
+* `cmake_minuim_required(VERSION [x.x])`<br />
+Set the cmake minimun required version, compile will aborted for cmake lower than this specified version
+* `set([var] [value])`<br />
+Set `var` = `value`
+* `project([project_name] [VERSION X.x])`<br />
+CMAKE_PROJECT_NAME = `project_name`
+CMAKE_PROJECT_VERSION = `X.x`
+CMAKE_PROJECT_VERSION_MAJOR = `X`
+CMAKE_PROJECT_VERSION_MINOR = `x`
+
+### Compiling
 * `add_executable([target] [src_files])`<br />
 Compile `srs_files` into a executable `target`
 * `target_include_directories([target] [PUBLIC|PRIVATE] [include_dir_path])`<br />
@@ -23,3 +35,12 @@ Compile `src_files`(.cpp source codes) of libraries`lib_name`
 Link `target` with `lib_name`. Kind of like the `-o` argument when we using g++
 * `add_subdirectory(dir)`<br />
 Link a subdirectory `dir` which has a CMakeLists.txt of its own
+
+## Commom CMake variable list
+* CMAKE_PROJECT_NAME
+* CMAKE_PROJECT_VERSION
+* CMAKE_PROJECT_VERSION_MAJOR
+* CMAKE_PROJECT_VERSION_MINOR
+* CMAKE_CURRENT_BINARY_DIR
+* CMAKE_CURRENT_SOURCE_DIR
+* CMAKE_INCLUDE_CURRENT_DIR
