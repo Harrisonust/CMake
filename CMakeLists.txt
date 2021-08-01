@@ -7,16 +7,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 project(myproject VERSION 1.0)
 
 # compile main
-add_executable(myprogram src/main.cpp)
+add_executable(main src/main.cpp)
 
-# include self-defined pure header
-target_include_directories(myprogram PUBLIC include)
+# include "pure header"
+target_include_directories(main PUBLIC include)
 
-#include self-defined library with .cpp and .h files version 1
-add_library(HandyMathLib STATIC lib/HandyMath/handy_math.cpp)
-target_include_directories(HandyMathLib PUBLIC lib/HandyMath/include)
-target_link_libraries(myprogram PUBLIC HandyMathLib)
+# include library with .cpp and .h files version 1
+add_library(HandyMathLib STATIC lib/HandyMath/handy_math.cpp) # compile .cpp
+target_include_directories(HandyMathLib PUBLIC lib/HandyMath/include) # inlcude .h
+target_link_libraries(main PUBLIC HandyMathLib)
 
-#include self-defined library with .cpp and .h files version 2(recursive cmakelists)
-add_subdirectory(lib/Geometrics)
-target_link_libraries(myprogram PUBLIC GeometicsLib)
+# include library with .cpp and .h files version 2(recursive cmakelists)
+add_subdirectory(lib/Geometrics) # sub-cmakelists will handle all the compile stuff
+target_link_libraries(main PUBLIC GeometicsLib) # link the library
