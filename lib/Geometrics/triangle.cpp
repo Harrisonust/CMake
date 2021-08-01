@@ -40,6 +40,7 @@ Point2D Triangle::getPoint(int i) const {
         case 2:
             return this->p2;
     }
+    return Point2D();
 }
 
 std::ostream& operator<<(std::ostream& os, const Triangle& t) {
