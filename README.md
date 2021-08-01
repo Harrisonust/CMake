@@ -1,4 +1,4 @@
-# Cmake notes
+# Cmake note
 ## Folder structure
 * `bin/` a folder that contains the compiled .DLL file or (sometimes) a .lib or the executable application or .exe file — the “binary”
 * `include/` a folder that contains the publicly distributed .h (header files) for a library to be included in another application, required to use a library or DLL, normally put **pure .h files** in
