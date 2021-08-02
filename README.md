@@ -1,4 +1,4 @@
-# Cmake notes
+= Cmake notes
 :toc:
 :toc-placement!:
 
