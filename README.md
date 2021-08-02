@@ -1,4 +1,9 @@
-# Cmake note
+# Cmake notes
+:toc:
+:toc-placement!:
+
+toc::[]
+
 ## Folder structure
 * `bin/` a folder that contains the compiled .DLL file or (sometimes) a .lib or the executable application or .exe file — the “binary”
 * `include/` a folder that contains the publicly distributed .h (header files) for a library to be included in another application, required to use a library or DLL, normally put **pure .h files** in
@@ -44,3 +49,11 @@ Link a subdirectory `dir` which has a CMakeLists.txt of its own
 * CMAKE_CURRENT_BINARY_DIR
 * CMAKE_CURRENT_SOURCE_DIR
 * CMAKE_INCLUDE_CURRENT_DIR
+
+## Check platform
+* `UNIX` : for all UNIX-like OS's, including Apple OS X and CygWin
+* `WIN32` : for Windows. Prior to 2.8.4 this included CygWin
+* `APPLE` : for Apple systems. Note this does not imply the system is Mac OSX, only that APPLE is #defined in C/C++ header files.
+* `MINGW` : is TRUE when using the MinGW compiler in Windows
+* `MSYS` : is TRUE when using the MSYS developer environment in Windows
+* `CYGWIN` : for Windows when using the CygWin version of cmake
