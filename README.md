@@ -19,10 +19,10 @@ Set the cmake minimun required version, compile will aborted for cmake lower tha
 * `set([var] [value])`<br />
 Set `var` = `value`
 * `project([project_name] [VERSION X.x])`<br />
-CMAKE_PROJECT_NAME = `project_name`
-CMAKE_PROJECT_VERSION = `X.x`
-CMAKE_PROJECT_VERSION_MAJOR = `X`
-CMAKE_PROJECT_VERSION_MINOR = `x`
+CMAKE_PROJECT_NAME = `project_name`<br />
+CMAKE_PROJECT_VERSION = `X.x`<br />
+CMAKE_PROJECT_VERSION_MAJOR = `X`<br />
+CMAKE_PROJECT_VERSION_MINOR = `x`<br />
 
 ### Compiling
 * `add_executable([target] [src_files])`<br />
