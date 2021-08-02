@@ -1,8 +1,4 @@
-= Cmake notes
-:toc:
-:toc-placement!:
-
-toc::[]
+# Cmake notes
 
 ## Folder structure
 * `bin/` a folder that contains the compiled .DLL file or (sometimes) a .lib or the executable application or .exe file — the “binary”
