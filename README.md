@@ -38,13 +38,23 @@ Link `target` with `lib`. Kind of like the `-o` argument when we using g++
 Link a subdirectory `dir` which has a CMakeLists.txt of its own
 
 ## Commom CMake variable list
-* CMAKE_PROJECT_NAME
-* CMAKE_PROJECT_VERSION
-* CMAKE_PROJECT_VERSION_MAJOR
-* CMAKE_PROJECT_VERSION_MINOR
-* CMAKE_CURRENT_BINARY_DIR
+* CMAKE_SOURCE_DIR
+The root source directory
+
 * CMAKE_CURRENT_SOURCE_DIR
-* CMAKE_INCLUDE_CURRENT_DIR
+The current source directory if using sub-projects and directories.
+
+* PROJECT_SOURCE_DIR
+The source directory of the current cmake project.
+
+* CMAKE_BINARY_DIR
+The root binary / build directory. This is the directory where you ran the cmake command.
+
+* CMAKE_CURRENT_BINARY_DIR
+The build directory you are currently in.
+
+* PROJECT_BINARY_DIR
+The build directory for the current project.
 
 ## Check platform
 * `UNIX` : for all UNIX-like OS's, including Apple OS X and CygWin

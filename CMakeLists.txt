@@ -50,3 +50,10 @@ FOO("ede" dd d)
 # call built-in function
 string(TOUPPER ${TEST_VAR} TEST_VAR)
 message(${TEST_VAR})
+
+
+message("in top-level cmake")
+message(${CMAKE_SOURCE_DIR})
+message(${PROJECT_SOURCE_DIR})
+message(${CMAKE_BINARY_DIR})
+message(${PROJECT_BINARY_DIR})
