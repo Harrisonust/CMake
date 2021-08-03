@@ -13,6 +13,7 @@
 <br />
 reference: https://www.linkedin.com/pulse/what-general-c-project-structure-like-herbert-elwood-gilliland-iii
 
+
 ## Commom cmake functions
 ### Setting
 * `cmake_minuim_required(VERSION [X.x])`<br />
@@ -39,6 +40,9 @@ Compile `src_files`(.cpp source codes) to libraries`target`
 Link `target` with `lib`. Kind of like the `-o` argument when we using g++
 * `add_subdirectory(dir)`<br />
 Link a subdirectory `dir` which has a CMakeLists.txt of its own
+* `install([TARGETS|DIRECTORIES|FILES] [target] [LIBRARY] DESTINATION [path])`<br />
+Install target to ${CMAKE_INSTALL_PREFIX}/path
+    * `LIBRARY` install to ${CMAKE_INSTALL_PREFIX}/lib
 
 ## Commom CMake variable list
 * `CMAKE_SOURCE_DIR` - The root source directory
@@ -48,6 +52,7 @@ Link a subdirectory `dir` which has a CMakeLists.txt of its own
 * `CMAKE_CURRENT_BINARY_DIR` - The build directory you are currently in.
 * `PROJECT_BINARY_DIR` - The build directory for the current project.
 * `CMAKE_INSTALL_PREFIX` - Prefix path when calling make install
+
 
 ## Check platform
 * `UNIX` - for all UNIX-like OS's, including Apple OS X and CygWin
