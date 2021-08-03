@@ -63,3 +63,11 @@ message(CMAKE_PROJECT_NAME:\t${CMAKE_PROJECT_NAME})
 message(PROJECT_NAME:\t\t${PROJECT_NAME})
 
 install(TARGETS GeometicsLib DESTINATION self-test)
+
+
+# do testing
+# enable_testing()
+# add_executable(testing_code src/main.cpp)
+# target_link_libraries(testing_code GeometricsLib HandyMathLib)
+# target_include_directories(testing_code PUBLIC include ${PROJECT_BINARY_DIR} )
+# add_test(test_all testing_code)

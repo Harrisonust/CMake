@@ -15,7 +15,7 @@
 using namespace std;
 
 int main() {
-    cout << "project_root_path: " <<project_root_path << endl;
+    cout << "project_root_path: " << project_root_path << endl;
 
     cout << endl << "hello world!" << endl;
 
