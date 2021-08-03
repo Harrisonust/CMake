@@ -33,8 +33,10 @@ endif()
 # check platform
 if(APPLE)
     message("USING APPLE")
-else()
-    message("NOT USING APPLE")
+elseif(WIN32)
+    message("WIN32")
+elseif(UNIX)
+    message("UNIX")
 endif()
 
 
