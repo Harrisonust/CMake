@@ -50,9 +50,9 @@ Link a subdirectory `dir` which has a CMakeLists.txt of its own
 * `CMAKE_INSTALL_PREFIX` - Prefix path when calling make install
 
 ## Check platform
-* `UNIX` : for all UNIX-like OS's, including Apple OS X and CygWin
-* `WIN32` : for Windows. Prior to 2.8.4 this included CygWin
-* `APPLE` : for Apple systems. Note this does not imply the system is Mac OSX, only that APPLE is #defined in C/C++ header files.
-* `MINGW` : is TRUE when using the MinGW compiler in Windows
-* `MSYS` : is TRUE when using the MSYS developer environment in Windows
-* `CYGWIN` : for Windows when using the CygWin version of cmake
+* `UNIX` - for all UNIX-like OS's, including Apple OS X and CygWin
+* `WIN32` - for Windows. Prior to 2.8.4 this included CygWin
+* `APPLE` - for Apple systems. Note this does not imply the system is Mac OSX, only that APPLE is #defined in C/C++ header files.
+* `MINGW` - is TRUE when using the MinGW compiler in Windows
+* `MSYS` - is TRUE when using the MSYS developer environment in Windows
+* `CYGWIN` - for Windows when using the CygWin version of cmake
