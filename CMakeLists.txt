@@ -8,7 +8,7 @@ project(myproject VERSION 1.0)
 
 # compile main
 add_executable(main src/main.cpp)
-configure_file(include/path.h.in ${PROJECT_BINARY_DIR}/path.h @ONLY)
+configure_file(include/path.h.in ${PROJECT_BINARY_DIR}/path.h )
 # include "pure header"
 target_include_directories(main PUBLIC include ${PROJECT_BINARY_DIR})
 
@@ -54,13 +54,14 @@ endif()
 # message(${TEST_VAR})
 
 message("\nin top-level cmake")
-message(CMAKE_SOURCE_DIR:\t${CMAKE_SOURCE_DIR})
-message(PROJECT_SOURCE_DIR:\t${PROJECT_SOURCE_DIR})
-message(CMAKE_BINARY_DIR:\t${CMAKE_BINARY_DIR})
-message(PROJECT_BINARY_DIR:\t${PROJECT_BINARY_DIR})
-message(CMAKE_INSTALL_PREFIX:\t${CMAKE_INSTALL_PREFIX})
-message(CMAKE_PROJECT_NAME:\t${CMAKE_PROJECT_NAME})
-message(PROJECT_NAME:\t\t${PROJECT_NAME})
+message(CMAKE_SOURCE_DIR:\t\t${CMAKE_SOURCE_DIR})
+message(PROJECT_SOURCE_DIR:\t\t${PROJECT_SOURCE_DIR})
+message(CMAKE_CURRENT_SOURCE_DIR:\t${CMAKE_CURRENT_SOURCE_DIR})
+message(CMAKE_BINARY_DIR:\t\t${CMAKE_BINARY_DIR})
+message(PROJECT_BINARY_DIR:\t\t${PROJECT_BINARY_DIR})
+message(CMAKE_INSTALL_PREFIX:\t\t${CMAKE_INSTALL_PREFIX})
+message(CMAKE_PROJECT_NAME:\t\t${CMAKE_PROJECT_NAME})
+message(PROJECT_NAME:\t\t\t${PROJECT_NAME})
 
 install(TARGETS GeometicsLib DESTINATION self-test)
 
