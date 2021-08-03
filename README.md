@@ -14,7 +14,7 @@
 reference: https://www.linkedin.com/pulse/what-general-c-project-structure-like-herbert-elwood-gilliland-iii
 
 
-## Commom cmake functions
+## Commom CMake functions
 ### Setting
 * `cmake_minuim_required(VERSION [X.x])`<br />
 Set the cmake minimun required version, compile will aborted for cmake lower than this specified version
@@ -56,8 +56,7 @@ Install `target` to ${CMAKE_INSTALL_PREFIX}/`path`
 * `CMAKE_INSTALL_PREFIX` - Prefix path when calling make install
 * `CMAKE_CXX_STANDARD` - c++ standard
 
-
-## Check platform
+#### platform-related
 * `UNIX` - for all UNIX-like OS's, including Apple OS X and CygWin
 * `WIN32` - for Windows. Prior to 2.8.4 this included CygWin
 * `APPLE` - for Apple systems. Note this does not imply the system is Mac OSX, only that APPLE is #defined in C/C++ header files.
