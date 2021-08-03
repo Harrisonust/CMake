@@ -42,18 +42,13 @@ Link a subdirectory `dir` which has a CMakeLists.txt of its own
 
 ## Commom CMake variable list
 * `CMAKE_SOURCE_DIR` - The root source directory
-
 * `CMAKE_CURRENT_SOURCE_DIR` - The current source directory if using sub-projects and directories.
-
 * `PROJECT_SOURCE_DIR` - The source directory of the current cmake project.
-
 * `CMAKE_BINARY_DIR` - The root binary / build directory. This is the directory where you ran the cmake command.
-
 * `CMAKE_CURRENT_BINARY_DIR` - The build directory you are currently in.
-
 * `PROJECT_BINARY_DIR` - The build directory for the current project.
-
 * `CMAKE_INSTALL_PREFIX` - Prefix path when calling make install
+
 ## Check platform
 * `UNIX` : for all UNIX-like OS's, including Apple OS X and CygWin
 * `WIN32` : for Windows. Prior to 2.8.4 this included CygWin
