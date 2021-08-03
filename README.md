@@ -28,14 +28,14 @@ CMAKE_PROJECT_VERSION_MINOR = `x`<br />
 
 ### Compiling
 * `add_executable([target] [src_files])`<br />
-Compile `src_files` into a executable `target`
+Compile `src_files` into an executable `target`
 * `target_include_directories([target] [PUBLIC|PRIVATE] [include_dir_path])`<br />
-Include headers inside `include_dir_path` into executable `target`
+Include headers inside `include_dir_path` into an executable `target`
 * `add_library([target] [STATIC|SHARED|MODULE] [src_files])`<br />
-Compile `src_files`(.cpp source codes) to libraries`target`
-    * `STATIC`: statically linking(linking at compile time)
-    * `SHARED`: dynamically linking(linking at running time)
-    * `MODULE`: ??
+Compile `src_files`(.cpp source codes) to libraries `target`
+    * `STATIC` - statically linking(linking at compile time)
+    * `SHARED` - dynamically linking(linking at running time)
+    * `MODULE` - ??
 * `target_link_libraries([target] [PUBLIC|PRIVATE] [lib])`<br />
 Link `target` with `lib`.
 * `add_subdirectory([dir])`<br />
@@ -43,8 +43,8 @@ Link a subdirectory `dir` which has a CMakeLists.txt of its own
 * `configure_file([input] [output])`<br />
 Copies an `input` file to an `output` file and substitutes variable values referenced as @VAR@ or ${VAR} in the input file content.
 * `install([TARGETS|DIRECTORIES|FILES] [target] [LIBRARY] DESTINATION [path])`<br />
-Install target to ${CMAKE_INSTALL_PREFIX}/path
-    * `LIBRARY` install to ${CMAKE_INSTALL_PREFIX}/lib
+Install `target` to ${CMAKE_INSTALL_PREFIX}/`path`
+    * `LIBRARY` - install to ${CMAKE_INSTALL_PREFIX}/lib
 
 ## Commom CMake variable list
 * `CMAKE_SOURCE_DIR` - The root source directory
