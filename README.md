@@ -38,7 +38,7 @@ Compile `src_files`(.cpp source codes) to libraries`target`
     * `MODULE`: ??
 * `target_link_libraries([target] [PUBLIC|PRIVATE] [lib])`<br />
 Link `target` with `lib`. Kind of like the `-o` argument when we using g++
-* `add_subdirectory(dir)`<br />
+* `add_subdirectory([dir])`<br />
 Link a subdirectory `dir` which has a CMakeLists.txt of its own
 * `install([TARGETS|DIRECTORIES|FILES] [target] [LIBRARY] DESTINATION [path])`<br />
 Install target to ${CMAKE_INSTALL_PREFIX}/path
@@ -52,6 +52,7 @@ Install target to ${CMAKE_INSTALL_PREFIX}/path
 * `CMAKE_CURRENT_BINARY_DIR` - The build directory you are currently in.
 * `PROJECT_BINARY_DIR` - The build directory for the current project.
 * `CMAKE_INSTALL_PREFIX` - Prefix path when calling make install
+* `CMAKE_CXX_STANDARD` - c++ standard
 
 
 ## Check platform
