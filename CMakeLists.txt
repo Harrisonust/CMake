@@ -8,9 +8,9 @@ project(myproject VERSION 1.0)
 
 # compile main
 add_executable(main src/main.cpp)
-
+configure_file(include/path.h.in ${PROJECT_BINARY_DIR}/path.h @ONLY)
 # include "pure header"
-target_include_directories(main PUBLIC include)
+target_include_directories(main PUBLIC include ${PROJECT_BINARY_DIR})
 
 # include library with .cpp and .h files version 1
 add_library(HandyMathLib STATIC lib/HandyMath/handy_math.cpp) # compile .cpp
@@ -21,34 +21,53 @@ target_link_libraries(main PUBLIC HandyMathLib)
 add_subdirectory(lib/Geometrics) # sub-cmakelists will handle all the compile stuff
 target_link_libraries(main PUBLIC GeometicsLib) # link the library
 
-# set variable and run if-else statement
-set(TEST_VAR "dekl")
-
-if (DEFINED TEST_VAR)
-    message(${TEST_VAR})
-else()
-    message("NOT DEFINED")
-endif()
-
 # check platform
 if(APPLE)
-    message("USING APPLE")
+    message(PLATFORM:\t"APPLE")
 elseif(WIN32)
-    message("WIN32")
+    message(PLATFORM:\t"WIN32")
 elseif(UNIX)
-    message("UNIX")
+    message(PLATFORM:\t"UNIX")
 endif()
+
+# set variable and run if-else statement
+# set(TEST_VAR "dekl")
+
+# if (DEFINED TEST_VAR)
+#     message(${TEST_VAR})
+# else()
+#     message("NOT DEFINED")
+# endif()
 
 
 # define function and call it
-function(FOO PARA PARA2 PARA3)
-    message(${PARA})
-    message(${PARA2})
-    message(${PARA3})
-endfunction(FOO)
+# function(FOO PARA PARA2 PARA3)
+#     message(${PARA})
+#     message(${PARA2})
+#     message(${PARA3})
+# endfunction(FOO)
 
-FOO("ede" dd d)
+# FOO("ede" dd d)
 
 # call built-in function
-string(TOUPPER ${TEST_VAR} TEST_VAR)
-message(${TEST_VAR})
+# string(TOUPPER ${TEST_VAR} TEST_VAR)
+# message(${TEST_VAR})
+
+message("\nin top-level cmake")
+message(CMAKE_SOURCE_DIR:\t${CMAKE_SOURCE_DIR})
+message(PROJECT_SOURCE_DIR:\t${PROJECT_SOURCE_DIR})
+message(CMAKE_BINARY_DIR:\t${CMAKE_BINARY_DIR})
+message(PROJECT_BINARY_DIR:\t${PROJECT_BINARY_DIR})
+message(CMAKE_INSTALL_PREFIX:\t${CMAKE_INSTALL_PREFIX})
+message(CMAKE_PROJECT_NAME:\t${CMAKE_PROJECT_NAME})
+message(PROJECT_NAME:\t\t${PROJECT_NAME})
+
+install(TARGETS GeometicsLib DESTINATION self-test)
+
+
+# do testing
+# enable_testing()
+# add_executable(testing_code src/main.cpp)
+# target_link_libraries(testing_code GeometricsLib HandyMathLib)
+# target_include_directories(testing_code PUBLIC include ${PROJECT_BINARY_DIR} )
+# add_test(test_all testing_code)

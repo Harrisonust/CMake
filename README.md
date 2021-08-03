@@ -13,6 +13,7 @@
 <br />
 reference: https://www.linkedin.com/pulse/what-general-c-project-structure-like-herbert-elwood-gilliland-iii
 
+
 ## Commom cmake functions
 ### Setting
 * `cmake_minuim_required(VERSION [X.x])`<br />
@@ -27,29 +28,37 @@ CMAKE_PROJECT_VERSION_MINOR = `x`<br />
 
 ### Compiling
 * `add_executable([target] [src_files])`<br />
-Compile `srs_files` into a executable `target`
+Compile `src_files` into a executable `target`
 * `target_include_directories([target] [PUBLIC|PRIVATE] [include_dir_path])`<br />
 Include headers inside `include_dir_path` into executable `target`
 * `add_library([target] [STATIC|SHARED|MODULE] [src_files])`<br />
 Compile `src_files`(.cpp source codes) to libraries`target`
+    * `STATIC`: statically linking(linking at compile time)
+    * `SHARED`: dynamically linking(linking at running time)
+    * `MODULE`: ??
 * `target_link_libraries([target] [PUBLIC|PRIVATE] [lib])`<br />
 Link `target` with `lib`. Kind of like the `-o` argument when we using g++
-* `add_subdirectory(dir)`<br />
+* `add_subdirectory([dir])`<br />
 Link a subdirectory `dir` which has a CMakeLists.txt of its own
+* `install([TARGETS|DIRECTORIES|FILES] [target] [LIBRARY] DESTINATION [path])`<br />
+Install target to ${CMAKE_INSTALL_PREFIX}/path
+    * `LIBRARY` install to ${CMAKE_INSTALL_PREFIX}/lib
 
 ## Commom CMake variable list
-* CMAKE_PROJECT_NAME
-* CMAKE_PROJECT_VERSION
-* CMAKE_PROJECT_VERSION_MAJOR
-* CMAKE_PROJECT_VERSION_MINOR
-* CMAKE_CURRENT_BINARY_DIR
-* CMAKE_CURRENT_SOURCE_DIR
-* CMAKE_INCLUDE_CURRENT_DIR
+* `CMAKE_SOURCE_DIR` - The root source directory
+* `CMAKE_CURRENT_SOURCE_DIR` - The current source directory if using sub-projects and directories.
+* `PROJECT_SOURCE_DIR` - The source directory of the current cmake project.
+* `CMAKE_BINARY_DIR` - The root binary / build directory. This is the directory where you ran the cmake command.
+* `CMAKE_CURRENT_BINARY_DIR` - The build directory you are currently in.
+* `PROJECT_BINARY_DIR` - The build directory for the current project.
+* `CMAKE_INSTALL_PREFIX` - Prefix path when calling make install
+* `CMAKE_CXX_STANDARD` - c++ standard
+
 
 ## Check platform
-* `UNIX` : for all UNIX-like OS's, including Apple OS X and CygWin
-* `WIN32` : for Windows. Prior to 2.8.4 this included CygWin
-* `APPLE` : for Apple systems. Note this does not imply the system is Mac OSX, only that APPLE is #defined in C/C++ header files.
-* `MINGW` : is TRUE when using the MinGW compiler in Windows
-* `MSYS` : is TRUE when using the MSYS developer environment in Windows
-* `CYGWIN` : for Windows when using the CygWin version of cmake
+* `UNIX` - for all UNIX-like OS's, including Apple OS X and CygWin
+* `WIN32` - for Windows. Prior to 2.8.4 this included CygWin
+* `APPLE` - for Apple systems. Note this does not imply the system is Mac OSX, only that APPLE is #defined in C/C++ header files.
+* `MINGW` - is TRUE when using the MinGW compiler in Windows
+* `MSYS` - is TRUE when using the MSYS developer environment in Windows
+* `CYGWIN` - for Windows when using the CygWin version of cmake

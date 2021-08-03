@@ -1,6 +1,7 @@
 #include <iostream>
 
 // clang-format off
+#include "path.h"
 #include "Const.h"
 #include "Const2.h"
 
@@ -14,6 +15,8 @@
 using namespace std;
 
 int main() {
+    cout << "project_root_path: " << project_root_path << endl;
+
     cout << endl << "hello world!" << endl;
 
     // include pure header files
