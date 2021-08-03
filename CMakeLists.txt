@@ -57,3 +57,5 @@ message(${CMAKE_SOURCE_DIR})
 message(${PROJECT_SOURCE_DIR})
 message(${CMAKE_BINARY_DIR})
 message(${PROJECT_BINARY_DIR})
+
+message(${CMAKE_INSTALL_PREFIX})
