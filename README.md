@@ -61,4 +61,4 @@ Install target to ${CMAKE_INSTALL_PREFIX}/path
 * `APPLE` - for Apple systems. Note this does not imply the system is Mac OSX, only that APPLE is #defined in C/C++ header files.
 * `MINGW` - is TRUE when using the MinGW compiler in Windows
 * `MSYS` - is TRUE when using the MSYS developer environment in Windows
-* `CYGWIN` - for Windows when using the CygWin version of cmake
+* `CYGWIN` - for Windows when using the CygWin version of cmake.
