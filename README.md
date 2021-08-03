@@ -27,11 +27,13 @@ CMAKE_PROJECT_VERSION_MINOR = `x`<br />
 
 ### Compiling
 * `add_executable([target] [src_files])`<br />
-Compile `srs_files` into a executable `target`
+Compile `src_files` into a executable `target`
 * `target_include_directories([target] [PUBLIC|PRIVATE] [include_dir_path])`<br />
 Include headers inside `include_dir_path` into executable `target`
 * `add_library([target] [STATIC|SHARED|MODULE] [src_files])`<br />
 Compile `src_files`(.cpp source codes) to libraries`target`
+`STATIC`: statically linking(linking at compile time)
+`SHARED`: dynamically linking(linking at running time)
 * `target_link_libraries([target] [PUBLIC|PRIVATE] [lib])`<br />
 Link `target` with `lib`. Kind of like the `-o` argument when we using g++
 * `add_subdirectory(dir)`<br />
