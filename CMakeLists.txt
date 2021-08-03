@@ -8,7 +8,7 @@ project(myproject VERSION 1.0)
 
 # compile main
 add_executable(main src/main.cpp)
-configure_file(include/path.h.in ${PROJECT_BINARY_DIR}/path.h @ONLY)
+configure_file(include/path.h.in ${PROJECT_BINARY_DIR}/path.h )
 # include "pure header"
 target_include_directories(main PUBLIC include ${PROJECT_BINARY_DIR})
 

@@ -40,6 +40,8 @@ Compile `src_files`(.cpp source codes) to libraries`target`
 Link `target` with `lib`. Kind of like the `-o` argument when we using g++
 * `add_subdirectory([dir])`<br />
 Link a subdirectory `dir` which has a CMakeLists.txt of its own
+* `configure_file([input] [output])`<br />
+Copies an <input> file to an <output> file and substitutes variable values referenced as @VAR@ or ${VAR} in the input file content.
 * `install([TARGETS|DIRECTORIES|FILES] [target] [LIBRARY] DESTINATION [path])`<br />
 Install target to ${CMAKE_INSTALL_PREFIX}/path
     * `LIBRARY` install to ${CMAKE_INSTALL_PREFIX}/lib
