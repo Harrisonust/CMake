@@ -37,7 +37,7 @@ Compile `src_files`(.cpp source codes) to libraries`target`
     * `SHARED`: dynamically linking(linking at running time)
     * `MODULE`: ??
 * `target_link_libraries([target] [PUBLIC|PRIVATE] [lib])`<br />
-Link `target` with `lib`. Kind of like the `-o` argument when we using g++
+Link `target` with `lib`.
 * `add_subdirectory([dir])`<br />
 Link a subdirectory `dir` which has a CMakeLists.txt of its own
 * `configure_file([input] [output])`<br />
