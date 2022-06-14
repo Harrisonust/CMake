@@ -55,8 +55,8 @@ Copies an `input` file to an `output` file and substitutes variable values refer
 Install `target` to ${CMAKE_INSTALL_PREFIX}/`path`
     * `LIBRARY` - install to ${CMAKE_INSTALL_PREFIX}/lib
 
-* `find_package()`<br />
-TODO
+* `find_package([package] [version] [REQUIRED])`<br />
+Find 3rd party library
 
 * `install()`<br />
 TODO
