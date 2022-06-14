@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libGeometicsLib.a  CMakeFiles/GeometicsLib.dir/Point2D.cpp.o CMakeFiles/GeometicsLib.dir/circle.cpp.o CMakeFiles/GeometicsLib.dir/square.cpp.o CMakeFiles/GeometicsLib.dir/triangle.cpp.o CMakeFiles/GeometicsLib.dir/shape.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libGeometicsLib.a

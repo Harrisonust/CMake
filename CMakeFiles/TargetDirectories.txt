@@ -1,0 +1,15 @@
+/Users/luoshiheng/MyCode/cmake_practice/CMakeFiles/install/local.dir
+/Users/luoshiheng/MyCode/cmake_practice/CMakeFiles/install/strip.dir
+/Users/luoshiheng/MyCode/cmake_practice/CMakeFiles/install.dir
+/Users/luoshiheng/MyCode/cmake_practice/CMakeFiles/rebuild_cache.dir
+/Users/luoshiheng/MyCode/cmake_practice/CMakeFiles/edit_cache.dir
+/Users/luoshiheng/MyCode/cmake_practice/CMakeFiles/HandyMathLib.dir
+/Users/luoshiheng/MyCode/cmake_practice/CMakeFiles/list_install_components.dir
+/Users/luoshiheng/MyCode/cmake_practice/CMakeFiles/main.dir
+/Users/luoshiheng/MyCode/cmake_practice/lib/Geometrics/CMakeFiles/install/local.dir
+/Users/luoshiheng/MyCode/cmake_practice/lib/Geometrics/CMakeFiles/install/strip.dir
+/Users/luoshiheng/MyCode/cmake_practice/lib/Geometrics/CMakeFiles/install.dir
+/Users/luoshiheng/MyCode/cmake_practice/lib/Geometrics/CMakeFiles/list_install_components.dir
+/Users/luoshiheng/MyCode/cmake_practice/lib/Geometrics/CMakeFiles/rebuild_cache.dir
+/Users/luoshiheng/MyCode/cmake_practice/lib/Geometrics/CMakeFiles/edit_cache.dir
+/Users/luoshiheng/MyCode/cmake_practice/lib/Geometrics/CMakeFiles/GeometicsLib.dir

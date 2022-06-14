@@ -21,6 +21,22 @@ target_link_libraries(main PUBLIC HandyMathLib)
 add_subdirectory(lib/Geometrics) # sub-cmakelists will handle all the compile stuff
 target_link_libraries(main PUBLIC GeometicsLib) # link the library
 
+# include external lib
+find_library(EXTERNAL_LIB
+    NAMES 
+        external.so
+    PATHS 
+        /Users/luoshiheng/MyCode/C_Programing/external_Cmake_lib
+)
+if ( NOT EXTERNAL_LIB )
+        message( WARNING "library NOT FOUND - the respective targets won't be build")
+else()
+        message( STATUS "library : ${EXTERNAL_LIB}")
+endif( NOT EXTERNAL_LIB )
+
+target_include_directories(main PUBLIC /Users/luoshiheng/MyCode/C_Programing/external_Cmake_lib/lib)
+target_link_libraries(main PUBLIC ${EXTERNAL_LIB})
+
 # check platform
 if(APPLE)
     message(PLATFORM:\t"APPLE")
