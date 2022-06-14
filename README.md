@@ -18,7 +18,7 @@ reference: https://www.linkedin.com/pulse/what-general-c-project-structure-like-
 
 
 ## Common CMake functions
-### Setting
+### Project commands
 * `cmake_minuim_required(VERSION [X.x])`<br />
 Set the cmake minimun required version, compile will aborted for cmake lower than this specified version
 * `set([var] [value])`<br />
@@ -48,15 +48,21 @@ target_include_directories(...) is required to do the simple #include "whatever.
 * `target_link_libraries([target] [PUBLIC|PRIVATE] [lib])`<br />
 target_link_libraries(...) is required to link the main.cpp's output to the library's output so they can call each other in the build
 
-* `target_link_directories([target] [PUBLIC|PRIVATE] [lib])`<br />
-???seems not important
-
 * `configure_file([input] [output])`<br />
 Copies an `input` file to an `output` file and substitutes variable values referenced as @VAR@ or ${VAR} in the input file content.
 
 * `install([TARGETS|DIRECTORIES|FILES] [target] [LIBRARY] DESTINATION [path])`<br />
 Install `target` to ${CMAKE_INSTALL_PREFIX}/`path`
     * `LIBRARY` - install to ${CMAKE_INSTALL_PREFIX}/lib
+
+### Scripting commands
+
+* OPTION(OPTION_NAME HELP_MESSAGE DEFAULT_VALUE)：<br />
+建立使用者選項參數，在例子中會建立一個使用者參數，名為 DOWNLOAD_MNIST，預設為 ON。
+* message([MODE] "message to display")：<br />
+message 可以看做是 CMake 的 print。MODE 必須填入 CMake 提供的常數選項，比較常用的包括了 none(未給定), STATUS, WARNING 和 FATAL_ERROR。模式的不同會決定輸出的目的地，若是 STATUS 則會輸出於 stdout，其他則會輸出於 stderr。
+* execute_process(COMMAND CMD_NAME [ARGUMENTS...] [ERROR_VARIABLE VARIABLE_NAME])：<br />
+execute_process 會在子程序內執行所給定的程式名稱。CMD_NAME 是執行程式的名稱，在例子中為 python。在 CMD_NAME 後的 ARGUMENTS 是字串陣列，作為執行程式的引數。最後 VARIABLE_NAME 是當程式運行失敗時，將會設為 true 的變數。
 
 ## Common CMake variable
 * `CMAKE_SOURCE_DIR` - The root source directory
