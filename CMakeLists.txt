@@ -35,17 +35,16 @@ target_link_libraries(main PUBLIC GeometicsLib) # link the library
 # target_link_libraries(main PUBLIC ${EXTERNAL_LIB})
 
 # check platform
-message("")
 if(APPLE)
-message(PLATFORM:\t"APPLE")
+    message(\nPLATFORM:\t"APPLE")
 endif()
 
 if(WIN32)
-message(PLATFORM:\t"WIN32")
+    message(\nPLATFORM:\t"WIN32")
 endif()
 
 if(UNIX)
-message(PLATFORM:\t"UNIX")
+    message(\nPLATFORM:\t"UNIX")
 endif()
 
 # set variable and run if-else statement
