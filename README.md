@@ -43,8 +43,6 @@ It is called inside the sub-CMakeList.txt, and it will compile the `src` into th
     * `MODULE` - ??
 
 * `target_include_directories([target] [PUBLIC|PRIVATE] [include_dir_path])`<br />
-Include headers inside `include_dir_path` into an executable `target`
-So we could do #include "header.h" in the source code instead of #include "path/header.h"
 target_include_directories(...) is required to do the simple #include "whatever.h" without needing to include the folder path in your C++ files
 
 * `target_link_libraries([target] [PUBLIC|PRIVATE] [lib])`<br />
@@ -60,7 +58,7 @@ Copies an `input` file to an `output` file and substitutes variable values refer
 Install `target` to ${CMAKE_INSTALL_PREFIX}/`path`
     * `LIBRARY` - install to ${CMAKE_INSTALL_PREFIX}/lib
 
-## Commom CMake variable list
+## Commom CMake variable
 * `CMAKE_SOURCE_DIR` - The root source directory
 * `CMAKE_CURRENT_SOURCE_DIR` - The current source directory if using sub-projects and directories.
 * `PROJECT_SOURCE_DIR` - The source directory of the current cmake project.

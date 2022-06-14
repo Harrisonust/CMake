@@ -8,9 +8,6 @@ project(myproject VERSION 1.0)
 
 # compile main
 add_executable(main src/main.cpp)
-configure_file(include/path.h.in ${PROJECT_BINARY_DIR}/path.h )
-# include "pure header"
-target_include_directories(main PUBLIC include ${PROJECT_BINARY_DIR})
 
 # include library with .cpp and .h files version 1
 add_library(HandyMathLib STATIC lib/HandyMath/handy_math.cpp) # compile .cpp
@@ -40,15 +37,15 @@ target_link_libraries(main PUBLIC GeometicsLib) # link the library
 # check platform
 message("")
 if(APPLE)
-    message(PLATFORM:\t"APPLE")
+message(PLATFORM:\t"APPLE")
 endif()
 
 if(WIN32)
-    message(PLATFORM:\t"WIN32")
+message(PLATFORM:\t"WIN32")
 endif()
 
 if(UNIX)
-    message(PLATFORM:\t"UNIX")
+message(PLATFORM:\t"UNIX")
 endif()
 
 # set variable and run if-else statement
@@ -73,6 +70,10 @@ endif()
 # call built-in function
 # string(TOUPPER ${TEST_VAR} TEST_VAR)
 # message(${TEST_VAR})
+
+configure_file(include/path.h.in ${PROJECT_BINARY_DIR}/path.h )
+# include "pure header"
+target_include_directories(main PUBLIC include ${PROJECT_BINARY_DIR})
 
 message("\nin top-level cmake")
 message(CMAKE_SOURCE_DIR:\t\t${CMAKE_SOURCE_DIR})
