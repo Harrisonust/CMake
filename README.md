@@ -1,5 +1,8 @@
 # Cmake notes
 
+## Commands
+`cmake -S [source_path] -B [build_path]`
+
 ## Folder structure
 * `bin/` - a folder that contains the compiled .DLL file or (sometimes) a .lib or the executable application or .exe file — the “binary”
 * `include/` - a folder that contains the publicly distributed .h (header files) for a library to be included in another application, required to use a library or DLL, normally put **pure .h files** in
@@ -29,19 +32,30 @@ CMAKE_PROJECT_VERSION_MINOR = `x`<br />
 ### Compiling
 * `add_executable([target] [src_files])`<br />
 Compile `src_files` into an executable `target`
-* `target_include_directories([target] [PUBLIC|PRIVATE] [include_dir_path])`<br />
-Include headers inside `include_dir_path` into an executable `target`
+
+* `add_subdirectory([dir])`<br />
+Told the Cmake system there is a subdirectory which contains antoher sub CMakeList.txt file and that will handdle the rest of the build process.
+
 * `add_library([target] [STATIC|SHARED|MODULE] [src_files])`<br />
-Compile `src_files`(.cpp source codes) to libraries `target`
+It is called inside the CMakeList.txt file of the subdirectory, and it will compile the `src_files` into a library `target`
     * `STATIC` - statically linking(linking at compile time)
     * `SHARED` - dynamically linking(linking at running time)
     * `MODULE` - ??
+
+* `target_include_directories([target] [PUBLIC|PRIVATE] [include_dir_path])`<br />
+Include headers inside `include_dir_path` into an executable `target`
+So we could do #include "header.h" in the source code instead of #include "path/header.h"
+target_include_directories(...) is required to do the simple #include "whatever.h" without needing to include the folder path in your C++ files
+
 * `target_link_libraries([target] [PUBLIC|PRIVATE] [lib])`<br />
-Link `target` with `lib`.
-* `add_subdirectory([dir])`<br />
-Link a subdirectory `dir` which has a CMakeLists.txt of its own
+target_link_libraries(...) is required to link the main.cpp's output to the library's output so they can call each other in the build
+
+* `target_link_directories([target] [PUBLIC|PRIVATE] [lib])`<br />
+???
+
 * `configure_file([input] [output])`<br />
 Copies an `input` file to an `output` file and substitutes variable values referenced as @VAR@ or ${VAR} in the input file content.
+
 * `install([TARGETS|DIRECTORIES|FILES] [target] [LIBRARY] DESTINATION [path])`<br />
 Install `target` to ${CMAKE_INSTALL_PREFIX}/`path`
     * `LIBRARY` - install to ${CMAKE_INSTALL_PREFIX}/lib

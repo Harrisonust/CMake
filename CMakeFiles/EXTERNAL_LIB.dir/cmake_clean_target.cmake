@@ -1,3 +1,0 @@
-file(REMOVE_RECURSE
-  "libEXTERNAL_LIB.a"
-)
