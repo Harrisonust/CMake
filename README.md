@@ -30,14 +30,14 @@ CMAKE_PROJECT_VERSION_MAJOR = `X`<br />
 CMAKE_PROJECT_VERSION_MINOR = `x`<br />
 
 ### Compiling
-* `add_executable([target] [src_files])`<br />
-Compile `src_files` into an executable `target`
+* `add_executable([target] [src])`<br />
+Compile `src` into an executable `target`
 
 * `add_subdirectory([dir])`<br />
-Told the Cmake system there is a subdirectory which contains antoher sub CMakeList.txt file and that will handdle the rest of the build process.
+Told the Cmake system there is a subdirectory which contains antoher sub-CMakeList.txt file and that will handle the build process of that subdir.
 
-* `add_library([target] [STATIC|SHARED|MODULE] [src_files])`<br />
-It is called inside the CMakeList.txt file of the subdirectory, and it will compile the `src_files` into a library `target`
+* `add_library([target] [STATIC|SHARED|MODULE] [src])`<br />
+It is called inside the sub-CMakeList.txt, and it will compile the `src` into the `target` library 
     * `STATIC` - statically linking(linking at compile time)
     * `SHARED` - dynamically linking(linking at running time)
     * `MODULE` - ??
@@ -51,7 +51,7 @@ target_include_directories(...) is required to do the simple #include "whatever.
 target_link_libraries(...) is required to link the main.cpp's output to the library's output so they can call each other in the build
 
 * `target_link_directories([target] [PUBLIC|PRIVATE] [lib])`<br />
-???
+???seems not important
 
 * `configure_file([input] [output])`<br />
 Copies an `input` file to an `output` file and substitutes variable values referenced as @VAR@ or ${VAR} in the input file content.

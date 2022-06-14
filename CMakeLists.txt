@@ -18,15 +18,15 @@ target_include_directories(HandyMathLib PUBLIC lib/HandyMath/include) # inlcude 
 target_link_libraries(main PUBLIC HandyMathLib)
 
 # include library with .cpp and .h files version 2(recursive cmakelists)
-add_subdirectory(lib/Geometrics) # sub-cmakelists will handle all the compile stuff
+add_subdirectory(lib/Geometrics) # sub-cmakelists will handle all its compile stuff
 target_link_libraries(main PUBLIC GeometicsLib) # link the library
 
-# include external lib
+# # include external lib
 # find_library(EXTERNAL_LIB
 #     NAMES 
 #         external.so
 #     PATHS 
-#         /Users/luoshiheng/MyCode/C_Programing/external_Cmake_lib
+#         /Users/luoshiheng/Code/C_Programing/external_Cmake_lib
 # )
 # if ( NOT EXTERNAL_LIB )
 #         message( WARNING "library NOT FOUND - the respective targets won't be build")
@@ -34,15 +34,20 @@ target_link_libraries(main PUBLIC GeometicsLib) # link the library
 #         message( STATUS "library : ${EXTERNAL_LIB}")
 # endif( NOT EXTERNAL_LIB )
 
-# target_include_directories(main PUBLIC /Users/luoshiheng/MyCode/C_Programing/external_Cmake_lib/lib)
+# target_include_directories(main PUBLIC /Users/luoshiheng/Code/C_Programing/external_Cmake_lib/lib)
 # target_link_libraries(main PUBLIC ${EXTERNAL_LIB})
 
 # check platform
+message("")
 if(APPLE)
     message(PLATFORM:\t"APPLE")
-elseif(WIN32)
+endif()
+
+if(WIN32)
     message(PLATFORM:\t"WIN32")
-elseif(UNIX)
+endif()
+
+if(UNIX)
     message(PLATFORM:\t"UNIX")
 endif()
 
@@ -79,8 +84,7 @@ message(CMAKE_INSTALL_PREFIX:\t\t${CMAKE_INSTALL_PREFIX})
 message(CMAKE_PROJECT_NAME:\t\t${CMAKE_PROJECT_NAME})
 message(PROJECT_NAME:\t\t\t${PROJECT_NAME})
 
-install(TARGETS GeometicsLib DESTINATION self-test)
-
+# install(TARGETS GeometicsLib DESTINATION self-test)
 
 # do testing
 # enable_testing()

@@ -11,7 +11,6 @@
 #include "square.h"
 #include "triangle.h"
 
-#include "external.h"
 // clang-format on
 
 using namespace std;
