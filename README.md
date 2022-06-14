@@ -55,6 +55,12 @@ Copies an `input` file to an `output` file and substitutes variable values refer
 Install `target` to ${CMAKE_INSTALL_PREFIX}/`path`
     * `LIBRARY` - install to ${CMAKE_INSTALL_PREFIX}/lib
 
+* `find_package()`<br />
+TODO
+
+* `install()`<br />
+TODO
+
 ### Scripting commands
 
 * `OPTION(OPTION_NAME HELP_MESSAGE DEFAULT_VALUE)`<br />
