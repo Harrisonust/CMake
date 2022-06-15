@@ -72,6 +72,22 @@ message 可以看做是 CMake 的 print。MODE 必須填入 CMake 提供的常�
 * `execute_process(COMMAND CMD_NAME [ARGUMENTS...] [ERROR_VARIABLE VARIABLE_NAME])`<br />
 execute_process 會在子程序內執行所給定的程式名稱。CMD_NAME 是執行程式的名稱，在例子中為 python。在 CMD_NAME 後的 ARGUMENTS 是字串陣列，作為執行程式的引數。最後 VARIABLE_NAME 是當程式運行失敗時，將會設為 true 的變數。
 
+* `set([var] [value])`<br />
+set var = value
+
+* `function([function_name] [arguments])`<br />
+    ```cmake
+    function(print_var var)
+        message("${var} = ${${var}}")
+    endfunction()
+
+    print_var(PROJECT_NAME)
+    ```
+
+* `foreach([var] [value])`<br />
+TODO
+
+
 ## Common CMake variable
 * `CMAKE_SOURCE_DIR` - The root source directory
 * `CMAKE_CURRENT_SOURCE_DIR` - The current source directory if using sub-projects and directories.
