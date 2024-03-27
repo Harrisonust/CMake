@@ -9,12 +9,12 @@ project(myproject VERSION 1.0)
 # compile main
 add_executable(main src/main.cpp)
 
-# include library with .cpp and .h files version 1
-add_library(HandyMathLib STATIC lib/HandyMath/handy_math.cpp) # compile .cpp
-target_include_directories(HandyMathLib PUBLIC lib/HandyMath/include) # inlcude .h
-target_link_libraries(main PUBLIC HandyMathLib)
+# include library version 1
+add_library(HandyMath SHARED lib/HandyMath/handy_math.cpp) # compile .cpp
+target_include_directories(HandyMath PUBLIC lib/HandyMath/include) # inlcude .h
+target_link_libraries(main PUBLIC HandyMath)
 
-# include library with .cpp and .h files version 2(recursive cmakelists)
+# include library version 2(recursive cmakelists)
 add_subdirectory(lib/Geometrics) # sub-cmakelists will handle all its compile stuff
 target_link_libraries(main PUBLIC GeometicsLib) # link the library
 
